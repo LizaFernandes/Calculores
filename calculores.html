@@ -1,0 +1,252 @@
+<!DOCTYPE html> 
+    <html> 
+     <head>
+       <title>Calculores</title>
+       <meta http-equiv="cache-control" content="public">
+       <meta name="robot" content="follow">
+       <meta name="generator" content="VSCode">
+       <meta name="copyright" content="XXXXX">
+       <meta http-equiv="content-language" content="pt-br,en-us">
+       <meta charset="UTF-8"/>
+       <link type="text/css" rel="stylesheet" href="papagaiadas.css"/>
+     </head>
+     <body>
+      <script>
+        function Introdução(){
+          document.getElementById("Introdução").setAttribute("open","");
+          document.getElementById("Calculadora").removeAttribute("open");
+          document.getElementById("Teoria").removeAttribute("open");
+          document.getElementById("btn1").classList.add("btn11");
+          document.getElementById("btn2").classList.remove("btn22");
+          document.getElementById("btn3").classList.remove("btn33");
+        }
+        function Calculadora(){
+          document.getElementById("Calculadora").setAttribute("open","");
+          document.getElementById("Introdução").removeAttribute("open");
+          document.getElementById("Teoria").removeAttribute("open");
+          document.getElementById("btn2").classList.add("btn22");
+          document.getElementById("btn1").classList.remove("btn11");
+          document.getElementById("btn3").classList.remove("btn33");
+        }
+        function Teoria(){
+          document.getElementById("Teoria").setAttribute("open","");
+          document.getElementById("Introdução").removeAttribute("open");
+          document.getElementById("Calculadora").removeAttribute("open");
+          document.getElementById("btn3").classList.add("btn33");
+          document.getElementById("btn1").classList.remove("btn11");
+          document.getElementById("btn2").classList.remove("btn22");
+        }
+        function color(){
+    const red = document.querySelector("#red").value
+    const green = document.querySelector("#green").value
+    const blue = document.querySelector("#blue").value
+    const color = document.querySelector("#color-result")
+
+	color.style.backgroundColor = `rgb(${red},${green},${blue})`
+
+	document.querySelector("#result").textContent = `RGB (${red},${green},${blue})`
+}
+document.getElementsByTagName('input')[0].onclick= function(){
+  document.getElementsByTagName('body')[0].style.backgroundColor=this.value;
+}
+      </script>
+      <div id="conteudo">
+        <article class="título">
+          <header> 
+            <h1 id="título" style="font-weight: bold;"> <!-- &nbsp = espaço -->
+              <span class="brilinho">C</span>
+              <span class="brilinho">A</span>
+              <span class="brilinho">L</span>
+              <span class="brilinho">C</span>
+              <span class="brilinho">U</span>
+              <span class="brilinho">L</span>
+              <span class="brilinho">A</span>
+              <span class="brilinho">D</span>
+              <span class="brilinho">O</span>
+              <span class="brilinho">R</span>
+              <span class="brilinho">A &nbsp</span>
+              <span class="brilinho">D</span>
+              <span class="brilinho">E &nbsp</span>
+              <span class="brilinho">C</span>
+              <span class="brilinho">O</span>
+              <span class="brilinho">R</span>
+              <span class="brilinho">E</span>
+              <span class="brilinho">S</span>
+            </h1>
+          </header>
+          <header class="botões">
+            <button id="btn1" class="btn11" onclick="Introdução()">
+              Introdução
+            </button> 
+            <button id="btn2" onclick="Calculadora()">
+              Calculadora
+            </button> 
+            <button id="btn3" onclick="Teoria()">
+              Teoria
+            </button>
+          </header>
+        </article>
+        <section>      
+          <dialog id="Introdução" open>
+                <p>
+                  Esse é um projeto didático que busca criar uma ferramenta de aprendizado visual e
+                  prático para o modelo aditivo de cores RGB . Para isso, desenvolveu-se um software de
+                  calculadora de cores que utiliza este modelo para seu funcionamento. Nele as cores são criadas
+                  pela soma das intensidades das três cores primárias, vermelho (Red), verde (Green) e azul
+                  (Blue), cada cor é definida por valores numéricos de 0 a 255 para cada componente (R, G, B) em
+                  um plano cartesiano de 3 dimensões (fig 1). Isto é possível pela forma que o cérebro enxerga as
+                  cores e pelo princípio de independência dos raios de luz .
+                </p>
+                <p>
+                  Para o desenvolvimento do site, inicialmente foi elaborado um wireframe, esboço básico que define a estrutura de cada página, com a disposição de elementos como cabeçalhos, seções, botões e menus. Com o layout definido, passou-se para a criação do design visual, estabelecendo a paleta de cores, tipografia, ícones e o estilo dos elementos visuais. Após essa etapa, utilizou-se o VSCode (Fig 1) para a criação das tecnologias de front-end que estruturam o site,  HTML para estruturar o conteúdo, CSS para estilizar os elementos e JavaScript para adicionar interatividade. Neste caso específico, não foram utilizadas tecnologias de back-end.
+
+                </p>
+                <img src="C:\Users\Dell\Downloads\WhatsApp Image 2024-11-14 at 07.03.11.jpeg" class="img1">
+                <p>
+                  O protótipo de máscara de palhaço foi criado a partir de uma máscara branca de papel. Ela foi pintada com cores referentes ao sistema RGB, e um nariz de palhaço foi anexado para realçar suas características. Em seguida, foi confeccionado um disco de Newton, que foi acoplado a um rolamento na parte traseira da máscara, permitindo que o disco gire e crie o efeito visual de mistura de cores.
+
+                </p>
+                <p>
+                  O site teve êxito em disponibilizar uma saída de cor para uma entrada de coordenadas cartesianas RGB e uma saída de coordenadas cartesianas RGB para uma entrada de cor como proposto inicialmente pelo projeto e a máscara (Fig 2) também teve êxito na sua atuação como um disco de Newton
+                </p>
+          </dialog>
+          <dialog id="Calculadora">
+              <section class="container">
+                <h2 class="títuloscalculadora">(Pigmento,Coordenda)</h2>
+                <input type="color"/>
+                <h2 class="títuloscalculadora" >(Coordenada,Pigmento)</h2>
+                <div id="color-result"></div>
+                <div class="colors">
+                    <div class="div-red">
+                        <input type="range" min="0" max="255" value="0" step="1" class="input-color" id="red" oninput="color()"></input> 
+                    </div>
+                    <div class="div-green">
+                        <input type="range" min="0" max="255" value="0" step="1" class="input-color" id="green" oninput="color()"></input> 
+                    </div>
+                    <div class="div-blue">
+                        <input type="range" min="0" max="255" value="0" step="1" class="input-color" id="blue" oninput="color()"></input> 
+                    </div>
+                </div>
+                <span id="result">RGB (0,0,0)</span>
+            </div>
+          </section>
+         </dialog>
+         <dialog id="Teoria">
+          <div class="espaçocubo">
+            <div class="cube" >
+              <div class="face front">
+                <img src="C:\Users\Dell\Downloads\frontcube.jpeg" usemap="#frente">
+              </div>
+              <div class="face back">
+                <img src="C:\Users\Dell\Downloads\backcube.jpeg">
+              </div>
+              <div class="face right">
+                <img src="C:\Users\Dell\Downloads\rightcube.jpeg">
+              </div>
+              <div class="face left">
+                <img src="C:\Users\Dell\Downloads\leftcube.jpeg">
+              </div>
+              <div class="face top">
+                <img src="C:\Users\Dell\Downloads\topcube.jpeg">
+              </div>
+              <div class="face bottom">
+                <img src="C:\Users\Dell\Downloads\bottomcube.jpeg">
+              </div>
+            </div>
+          </div>
+            <p>
+              Esse é um projeto didático que busca criar uma ferramenta de aprendizado visual e
+              prático para o modelo aditivo de cores RGB . Para isso, desenvolveu-se um software de
+              calculadora de cores que utiliza este modelo para seu funcionamento. Nele as cores são criadas
+              pela soma das intensidades das três cores primárias, vermelho (Red), verde (Green) e azul
+              (Blue), cada cor é definida por valores numéricos de 0 a 255 para cada componente (R, G, B) em
+              um plano cartesiano de 3 dimensões (fig 1). Isto é possível pela forma que o cérebro enxerga as
+              cores e pelo princípio de independência dos raios de luz .
+            </p>
+            <p>
+              A luz viaja do olho para a retina, localizada na parte de trás do olho. A retina é coberta
+              com milhões de células receptivas de luz chamadas bastonetes e cones (fig 2). Os humanos,
+              como tricromatas, possuem 3 tipos de cones, o de comprimento de onda curto (S), médio (M) e  
+              longo (L), quando essas células detectam luz, elas enviam sinais para o cérebro.
+            </p>
+            <p>
+              A estimulação diferencial deles cria eixos de cores entre vermelho,verde e azul,
+              permitindo a visualização de cerca de 10 milhões de cores, todas derivadas de dois tipos de
+              mistura de luz a aditiva e subtrativa (fig 3), a mistura aditiva envolve a adição de componentes
+              espectrais já subtrativa a absorção de partes do espectro.
+            </p>
+            <p>
+              O círculo de cores (fig 4), criado pela primeira vez por Newton é uma representação
+              visual simples e direta dos princípios que também fundamentam o sistema aditivo de cores RGB.
+              Ambos ilustram como a combinação de diferentes luzes pode criar novas cores, com aplicações
+              que vão desde demonstrações didáticas até tecnologias avançadas de exibição de imagem. 
+            </p>
+            <p>
+              Além disso, o princípio da independência dos raios de luz permite que cada cor seja
+              representada como um ponto em um plano cartesiano tridimensional, pois cada cor pode ser
+              considerada separadamente e combinada sem interferência, facilitando a visualização e
+              manipulação das cores em modelos aditivos como o RGB. 
+            </p>
+         </dialog>
+        </section>
+        <footer>
+        </footer>
+      </div>
+      <div>
+        <div class="fundo">
+          <div class="bolinhas">
+            <span class="bolhamagenta"></span>
+            <span class="bolhavermelho"></span>
+            <span class="bolhalaranja"></span>
+            <span class="bolhaamarelo"></span>
+            <span class="bolhaverdeamarelo"></span>
+            <span class="bolhaverde"></span>
+            <span class="bolhaciano"></span>
+            <span class="bolhaazul"></span>
+            <span class="bolharoxo"></span>
+            <span class="bolhavioleta"></span>
+            <span class="bolhamagenta"></span>
+            <span class="bolhavermelho"></span>
+            <span class="bolhalaranja"></span>
+            <span class="bolhaamarelo"></span>
+            <span class="bolhaverdeamarelo"></span>
+            <span class="bolhaverde"></span>
+            <span class="bolhaciano"></span>
+            <span class="bolhaazul"></span>
+            <span class="bolharoxo"></span>
+            <span class="bolhavioleta"></span>
+            <span class="bolhamagenta"></span>
+            <span class="bolhavermelho"></span>
+            <span class="bolhalaranja"></span>
+            <span class="bolhaamarelo"></span>
+            <span class="bolhaverdeamarelo"></span>
+            <span class="bolhaverde"></span>
+            <span class="bolhaciano"></span>
+            <span class="bolhaazul"></span>
+            <span class="bolharoxo"></span>
+            <span class="bolhavioleta"></span>
+            <span class="bolhamagenta"></span>
+            <span class="bolhavermelho"></span>
+            <span class="bolhalaranja"></span>
+            <span class="bolhaamarelo"></span>
+            <span class="bolhaverdeamarelo"></span>
+            <span class="bolhaverde"></span>
+            <span class="bolhaciano"></span>
+            <span class="bolhaazul"></span>
+            <span class="bolharoxo"></span>
+            <span class="bolhavioleta"></span>
+            <span class="bolhamagenta"></span>
+            <span class="bolhavermelho"></span>
+            <span class="bolhalaranja"></span>
+            <span class="bolhaamarelo"></span>
+            <span class="bolhaverdeamarelo"></span>
+            <span class="bolhaverde"></span>
+            <span class="bolhaciano"></span>
+            <span class="bolhaazul"></span>
+            <span class="bolharoxo"></span>
+            <span class="bolhavioleta"></span>
+          </div>
+        </div>
+      </div>
+     </body>
+    </html>
